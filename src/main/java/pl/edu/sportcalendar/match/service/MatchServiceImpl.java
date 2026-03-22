@@ -5,9 +5,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import pl.edu.sportcalendar.competition.model.Sport;
 import pl.edu.sportcalendar.match.dto.MatchResponseDto;
 import pl.edu.sportcalendar.match.mapper.MatchMapper;
 import pl.edu.sportcalendar.match.repository.MatchRepository;
+import pl.edu.sportcalendar.match.repository.MatchSpecification;
+
+import java.time.LocalDate;
 
 @Service
 @RequiredArgsConstructor
@@ -23,8 +27,8 @@ class MatchServiceImpl implements MatchService {
     }
 
     @Override
-    public Page<MatchResponseDto> getAllPageable(Pageable pageable) {
-        return matchRepository.findAll(pageable)
+    public Page<MatchResponseDto> getAllPageable(Pageable pageable, Sport sport, LocalDate date) {
+        return matchRepository.findAll(MatchSpecification.build(sport, date), pageable)
                 .map(matchMapper::toMatchResponseDto);
     }
 }
