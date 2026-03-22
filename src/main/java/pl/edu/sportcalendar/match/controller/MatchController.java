@@ -1,5 +1,7 @@
 package pl.edu.sportcalendar.match.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -25,14 +27,17 @@ import java.time.LocalDate;
 @RestController
 @RequestMapping("/events")
 @RequiredArgsConstructor
+@Tag(name = "Events", description = "Endpoints for managing sport events")
 public class MatchController {
     private final MatchService matchService;
 
+    @Operation(summary = "Get detailed information about sport event by id")
     @GetMapping("/{id}")
     public ResponseWrapper<MatchResponseDto> getById(@PathVariable long id) {
         return ResponseWrapper.ok(matchService.getById(id));
     }
 
+    @Operation(summary = "Get page of events with sport and date filters")
     @GetMapping
     public ResponseWrapper<Page<MatchResponseDto>> getAll(
             Pageable pageable,
@@ -42,6 +47,7 @@ public class MatchController {
         return ResponseWrapper.ok(matchService.getAllPageable(pageable, sport, date));
     }
 
+    @Operation(summary = "Create a new sport event")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseWrapper<Long> create(@Valid @RequestBody MatchCreateDto dto) {
