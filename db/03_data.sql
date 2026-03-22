@@ -16,6 +16,11 @@ INSERT INTO stage (public_id, name, ordering)
 VALUES ('ROUND OF 16', 'ROUND OF 16', 4),
        ('FINAL', 'FINAL', 7);
 
+-- stadium
+INSERT INTO stadium (name, country_id)
+VALUES ('Wembley Stadium', 1),
+       ('Camp Nou', 2);
+
 -- team
 INSERT INTO team (name, official_name, slug, abbreviation, country_id)
 VALUES ('Al Shabab', 'Al Shabab FC', 'al-shabab-fc', 'SHA', (SELECT id FROM country WHERE code = 'KSA')),
@@ -30,7 +35,6 @@ VALUES ('Al Shabab', 'Al Shabab FC', 'al-shabab-fc', 'SHA', (SELECT id FROM coun
        ('Urawa Reds', 'Urawa Red Diamonds', 'urawa-red-diamonds', 'RED', (SELECT id FROM country WHERE code = 'JPN'));
 
 -- match
-
 INSERT INTO match (season, date, time_utc, home_goals, away_goals, status, message,
                    competition_id, stage_id, stadium_id,
                    home_team_id, away_team_id, winner_team_id)
@@ -95,7 +99,7 @@ VALUES (2024,
         (SELECT id FROM team WHERE slug = 'al-faisaly-fc'),
         (SELECT id FROM team WHERE slug = 'foolad-khuzestan-fc'));
 
-INSERT INTO match (season, date, time_utc, home_goals, away_goals,status,
+INSERT INTO match (season, date, time_utc, home_goals, away_goals, status,
                    competition_id, stage_id,
                    away_team_id)
 VALUES (2024,
