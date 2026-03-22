@@ -21,34 +21,34 @@ function populateSelect(selectId, items, labelField = "name") {
 function loadCompetitions() {
     fetch('/api/competitions')
         .then(res => res.json())
-        .then(data => populateSelect('competitionId', data));
+        .then(data => populateSelect('competitionId', data.data));
 }
 
 function loadTeams() {
     fetch('/api/teams')
         .then(res => res.json())
         .then(data => {
-            populateSelect('homeTeamId', data);
-            populateSelect('awayTeamId', data);
+            populateSelect('homeTeamId', data.data);
+            populateSelect('awayTeamId', data.data);
         });
 }
 
 function loadStages() {
     fetch('/api/stages')
         .then(res => res.json())
-        .then(data => populateSelect('stageId', data));
+        .then(data => populateSelect('stageId', data.data));
 }
 
 function loadGroups() {
     fetch('/api/groups')
         .then(res => res.json())
-        .then(data => populateSelect('groupId', data));
+        .then(data => populateSelect('groupId', data.data));
 }
 
 function loadStadiums() {
     fetch('/api/stadiums')
         .then(res => res.json())
-        .then(data => populateSelect('stadiumId', data));
+        .then(data => populateSelect('stadiumId', data.data));
 }
 
 function addEvent() {
