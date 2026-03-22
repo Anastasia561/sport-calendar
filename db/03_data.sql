@@ -9,7 +9,7 @@ VALUES ('Saudi Arabia', 'KSA'),
 
 -- competition
 INSERT INTO competition (public_id, name, sport)
-VALUES ('afc-champions-league', 'AFC Champions League', 'Football');
+VALUES ('afc-champions-league', 'AFC Champions League', 'FOOTBALL');
 
 -- stage
 INSERT INTO stage (public_id, name, ordering)
