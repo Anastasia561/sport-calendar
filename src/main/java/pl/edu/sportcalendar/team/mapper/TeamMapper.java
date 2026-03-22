@@ -10,7 +10,7 @@ import pl.edu.sportcalendar.team.model.Team;
 public interface TeamMapper {
 
     @Mapping(source = "country.code", target = "teamCountryCode")
-    TeamResponseDto teamToTeamResponseDto(Team team);
+    TeamResponseDto toTeamResponseDto(Team team);
 
     TeamDto toDto(Team team);
 }
