@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Event</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="navbar">
+    <div>Sport Calendar</div>
+    <div>
+        <a href="events.html">Events</a>
+        <a href="#">Create</a>
+    </div>
+</div>
+
+<div class="container">
+
+    <h2 class="events-title">Create Event</h2>
+
+    <div class="form">
+
+        <label for="season">Season:</label>
+        <input type="number" id="season" placeholder="Season (e.g. 2024)" required>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" required>
+        <label for="time">Time:</label>
+        <input type="time" id="time" required>
+
+        <label for="message">Message:</label>
+        <input type="text" id="message" placeholder="Message (optional)">
+
+        <label for="competitionId">Competition:</label>
+        <select id="competitionId" required></select>
+
+        <label for="stageId">Stage:</label>
+        <select id="stageId" required></select>
+
+        <label for="groupId">Group:</label>
+        <select id="groupId"></select>
+
+        <label for="stadiumId">Stadium:</label>
+        <select id="stadiumId"></select>
+
+        <label for="homeTeamId">Home team:</label>
+        <select id="homeTeamId"></select>
+        <label for="awayTeamId">Away team:</label>
+        <select id="awayTeamId" required></select>
+
+        <button onclick="addEvent()">Create Event</button>
+
+    </div>
+
+</div>
+
+<script src="js/create-event.js"></script>
+
+</body>
+</html>
