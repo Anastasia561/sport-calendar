@@ -1,0 +1,20 @@
+package pl.edu.sportcalendar.controller;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.http.HttpMethod;
+import pl.edu.sportcalendar.AbstractControllerIntegrationTest;
+
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+public class CompetitionControllerTest extends AbstractControllerIntegrationTest {
+    @Test
+    void shouldReturnListOfCompetitions_whenExists() throws Exception {
+        performRequest(HttpMethod.GET, "/competitions", null)
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.data").isArray())
+                .andExpect(jsonPath("$.data.length()").value(1))
+                .andExpect(jsonPath("$.data[0].id").value(1))
+                .andExpect(jsonPath("$.data[0].name").value("AFC Champions League"));
+    }
+}

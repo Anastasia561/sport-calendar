@@ -1,4 +1,4 @@
-package pl.edu.sportcalendar.competition;
+package pl.edu.sportcalendar.competition.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
