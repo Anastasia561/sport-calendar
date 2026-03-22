@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.edu.sportcalendar.match.dto.MatchResponseDto;
 import pl.edu.sportcalendar.match.service.MatchService;
+import pl.edu.sportcalendar.wrapper.ResponseWrapper;
 
 @RestController
 @RequestMapping("/events")
@@ -15,7 +16,7 @@ public class MatchController {
     private final MatchService matchService;
 
     @GetMapping("/{id}")
-    public MatchResponseDto getMatch(@PathVariable long id) {
-        return matchService.getById(id);
+    public ResponseWrapper<MatchResponseDto> getMatch(@PathVariable long id) {
+        return ResponseWrapper.ok(matchService.getById(id));
     }
 }
