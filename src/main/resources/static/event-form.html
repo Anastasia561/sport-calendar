@@ -24,31 +24,45 @@
 
         <label for="season">Season:</label>
         <input type="number" id="season" placeholder="Season (e.g. 2024)" required>
+        <small class="error" id="seasonError"></small>
 
         <label for="date">Date:</label>
         <input type="date" id="date" required>
+        <small class="error" id="dateError"></small>
+
         <label for="time">Time:</label>
         <input type="time" id="time" required>
+        <small class="error" id="timeUtcError"></small>
 
         <label for="message">Message:</label>
         <input type="text" id="message" placeholder="Message (optional)">
+        <small class="error" id="messageError"></small>
 
         <label for="competitionId">Competition:</label>
         <select id="competitionId" required></select>
+        <small class="error" id="competitionIdError"></small>
 
         <label for="stageId">Stage:</label>
         <select id="stageId" required></select>
+        <small class="error" id="stageIdError"></small>
 
         <label for="groupId">Group:</label>
         <select id="groupId"></select>
+        <small class="error" id="groupIdError"></small>
 
         <label for="stadiumId">Stadium:</label>
         <select id="stadiumId"></select>
+        <small class="error" id="stadiumIdError"></small>
 
         <label for="homeTeamId">Home team:</label>
         <select id="homeTeamId"></select>
+        <small class="error" id="homeTeamIdError"></small>
+
         <label for="awayTeamId">Away team:</label>
         <select id="awayTeamId" required></select>
+        <small class="error" id="awayTeamIdError"></small>
+
+        <div id="globalError" class="global-error"></div>
 
         <button onclick="addEvent()">Create Event</button>
 

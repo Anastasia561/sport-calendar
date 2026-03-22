@@ -142,3 +142,24 @@ body {
     box-sizing: border-box;
     transition: border 0.2s ease;
 }
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 2px;
+    display: block;
+}
+
+.input-error {
+    border-color: red !important;
+}
+
+.global-error {
+    color: #e74c3c;
+    background-color: #fdecea;
+    border: 1px solid #e74c3c;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    display: none;
+}
