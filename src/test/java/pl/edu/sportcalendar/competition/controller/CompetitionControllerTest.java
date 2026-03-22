@@ -1,4 +1,4 @@
-package pl.edu.sportcalendar.controller;
+package pl.edu.sportcalendar.competition.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpMethod;
@@ -7,7 +7,7 @@ import pl.edu.sportcalendar.AbstractControllerIntegrationTest;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-public class CompetitionControllerTest extends AbstractControllerIntegrationTest {
+class CompetitionControllerTest extends AbstractControllerIntegrationTest {
     @Test
     void shouldReturnListOfCompetitions_whenExists() throws Exception {
         performRequest(HttpMethod.GET, "/competitions", null)
