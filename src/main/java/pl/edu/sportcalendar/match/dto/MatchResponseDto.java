@@ -2,6 +2,7 @@ package pl.edu.sportcalendar.match.dto;
 
 import pl.edu.sportcalendar.competition.model.Sport;
 import pl.edu.sportcalendar.match.model.Status;
+import pl.edu.sportcalendar.stage.dto.StageResponseDto;
 import pl.edu.sportcalendar.team.dto.TeamResponseDto;
 
 import java.time.LocalDate;
@@ -20,6 +21,7 @@ public record MatchResponseDto(
         Integer awayGoals,
         String winner,
         String message,
+        StageResponseDto stage,
         String group,
         String originCompetitionId,
         String originCompetitionName

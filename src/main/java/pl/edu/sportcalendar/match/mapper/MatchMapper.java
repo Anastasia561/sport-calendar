@@ -4,9 +4,10 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import pl.edu.sportcalendar.match.dto.MatchResponseDto;
 import pl.edu.sportcalendar.match.model.Match;
+import pl.edu.sportcalendar.stage.mapper.StageMapper;
 import pl.edu.sportcalendar.team.mapper.TeamMapper;
 
-@Mapper(componentModel = "spring", uses = TeamMapper.class)
+@Mapper(componentModel = "spring", uses = {TeamMapper.class, StageMapper.class})
 public interface MatchMapper {
 
     @Mapping(source = "competition.sport", target = "sport")
